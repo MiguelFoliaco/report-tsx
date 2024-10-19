@@ -61,7 +61,7 @@ import { ticket_de_venta } from './ticket_de_venta'
 
 // }
 
-function App({ page = ticket_de_venta }: { page: IPage }) {
+function App({ page = ticket_de_venta }: { page?: IPage }) {
 
   const { updatePage, page: _page } = usePage(state => state)
   const keys = (Object.keys(_page?.content || {}) as [keyof typeof page.content])
