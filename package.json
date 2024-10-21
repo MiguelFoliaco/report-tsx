@@ -1,15 +1,14 @@
 {
   "name": "report-tsx",
   "private": false,
-  "version": "0.0.1",
+  "version": "1.0.2",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/types",
   "scripts": {
     "build": "rollup -c",
-    "lint": "eslint .",
-    "postinstall": "npm run buil"
+    "lint": "eslint ."
   },
   "dependencies": {
     "react": "^18.3.1",
