@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { ContainerStyle, RichTextStyle } from "../components"
+import { ContainerStyle, ImageStyle, RichTextStyle, TableStyle } from "../components"
 
 export type variantColorMap = 'light' | 'dark' | 'normal' | '50' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
 export type variantColorTextAndBackgroundMap = 'default' | 'contrast' | 'dark' | 'light'
@@ -30,11 +30,11 @@ export interface IComponents {
     },
     table?: {
         Component?: ReactNode;
-        styles?: any
+        styles?: TableStyle
     },
     image?: {
         Component?: ReactNode;
-        styles?: any
+        styles?: ImageStyle
     },
 }
 export interface ITheme {

@@ -1,17 +1,14 @@
 {
   "name": "report-tsx",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "0.0.1",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/types",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "build:lib": "node build.mjs --jsx",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "build": "rollup -c",
+    "lint": "eslint ."
   },
   "dependencies": {
     "react": "^18.3.1",
