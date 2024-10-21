@@ -1,13 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { FC } from "react"
 import { ITable } from "./type"
-import { useTheme } from "../../theme"
 import './table.css'
 
 export const Table: FC<ITable> = ({ props, styles }) => {
-    // const children = useBuilder(props.nodes)
-    const { theme, mode } = useTheme()
-    const colors = theme.palette
     const headers = props.row
 
     return (
@@ -17,7 +13,7 @@ export const Table: FC<ITable> = ({ props, styles }) => {
                     <tr style={{ ...styles?.rowHeader }}>
                         {
                             headers.map(e => (
-                                <th style={{ backgroundColor: colors.primary[mode], ...styles?.title }} key={`table-head-${e.field}`}>{e.headerName}</th>
+                                <th style={{ ...styles?.title }} key={`table-head-${e.field}`}>{e.headerName}</th>
                             ))
                         }
                     </tr>
