@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Component } from './compontens'
 
 
@@ -6,13 +5,8 @@ import { Component } from './compontens'
 
 export const Builder = (props: { type: keyof typeof Component, props: object }) => {
     const C = Component[props.type]
-    return (
-        <>
-            {
-                //@ts-ignore
-                <C {...props} />
-            }
-        </>
-    )
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
+    return <C {...props} />
 }
 

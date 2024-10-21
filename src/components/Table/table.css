@@ -1,55 +1,45 @@
-/* Estilos generales del ticket de venta */
 table.report {
   display: block;
   border-collapse: collapse;
   font-family: system-ui, Courier, monospace;
-  background-color: #fff;
   font-size: 14px;
   color: #333;
   margin: 0 auto;
   width:fit-content;
 }
 
-/* Encabezado de la tabla */
 table.report thead th {
-  border-bottom: 2px dashed #000;
+  border-bottom: 2px dashed #999;
   text-align: left;
   padding: 8px 4px;
   font-size: 16px;
   text-transform: uppercase;
 }
 
-/* Cuerpo de la tabla */
 table.report tbody tr {
   border-bottom: 1px dashed #999;
 
-  /* Bordes de estilo ticket */
 }
 
-/* Celdas del cuerpo */
 table.report tbody td {
   padding: 8px 4px;
   text-align: left;
 }
 
-/* Alinear texto numérico a la derecha */
 table.report tbody td.right {
   text-align: right;
 }
 
-/* Texto en negrita */
 table.report tbody td.bold {
   font-weight: bold;
 }
 
-/* Estilo de la fila de totales */
 table.report tfoot td {
   padding-top: 10px;
   font-weight: bold;
-  border-top: 2px dashed #000;
+  border-top: 2px dashed #999;
 }
 
-/* Fila de totales */
 table.report tfoot td.right {
   text-align: right;
 }
