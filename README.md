@@ -1,6 +1,8 @@
 # Report TSX
 
 ![report-tsx](https://cogynngpmmcgfxiimtnc.supabase.co/storage/v1/object/public/images/portafolio/report-tsx.png?t=2024-10-21T14%3A20%3A25.634Z)
+
+
 Este proyecto web consiste en un componente interactivo que permite generar e imprimir documentos en formatos comunes como tickets, facturas, órdenes de compra, entre otros. La funcionalidad clave es un botón que, al ser clicado, envía el contenido del componente visualizado a la impresora del usuario, optimizado para garantizar que el formato del documento sea adecuado para la impresión, sin perder detalles esenciales.
 
 
