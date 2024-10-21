@@ -1,13 +1,14 @@
 {
   "name": "report-tsx",
   "private": false,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "homepage": "https://foliacos.tech/project/report.tsx",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/types",
   "license": "MIT",
+  "keywords": ["report","tsx","react","crystal report","reportes","forms","formularios","tickets","pdf","print","imprimir"],
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint ."
