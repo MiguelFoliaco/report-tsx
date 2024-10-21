@@ -8,7 +8,22 @@
   "module": "dist/index.esm.js",
   "types": "dist/types",
   "license": "MIT",
-  "keywords": ["report","tsx","react","crystal report","reportes","forms","formularios","tickets","pdf","print","imprimir"],
+  "keywords": [
+    "report",
+    "tsx",
+    "react",
+    "react report",
+    "report react",
+    "crystal report",
+    "reportes",
+    "forms",
+    "formularios",
+    "tickets",
+    "react tickets",
+    "pdf",
+    "print",
+    "imprimir"
+  ],
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint ."
