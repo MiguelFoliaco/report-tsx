@@ -9,7 +9,7 @@ export const templateString = (
     val = Array.from(valSet);
     val.forEach((e) => {
         const key = e.replace("${", "").replace("}", "");
-        _text = _text.replaceAll(e, String(params[key]) || "");
+        _text = _text.replaceAll(e, String(params[key]  ?? ""));
     });
 
     return _text;
