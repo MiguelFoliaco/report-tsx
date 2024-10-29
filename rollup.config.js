@@ -31,10 +31,11 @@ export default {
         typescript({
             useTsconfigDeclarationDir: true,
             clean: true,
-            tsconfig: './tsconfig.json'
+            tsconfig: './tsconfig.json',
+            exclude: ["test"]
         }),
         babel({
-            exclude: 'node_modules/**',
+            exclude: ['node_modules/**', 'test/**'],
             presets: ['@babel/preset-react'],
         }),
         terser(), // Minificación
