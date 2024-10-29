@@ -3,6 +3,14 @@
   "private": false,
   "version": "1.0.5",
   "homepage": "https://foliacos.tech/project/report.tsx",
+  "repository": {
+    "url": "git+https://github.com/MiguelFoliaco/report-tsx.git",
+    "type": "git"
+  },
+  "bugs":{
+    "url":"https://github.com/MiguelFoliaco/report-tsx/issues",
+    "email": "foliaco18@outlook.es"
+  },
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -28,6 +36,13 @@
     "build": "rollup -c",
     "lint": "eslint ."
   },
+  "author": {
+    "email": "foliacosoft18@gmail.com",
+    "name": "Miguel Angel Foliaco Gomez",
+    "url": "https://foliacos.tech"
+  },
+  "categories": ["Visualization"],
+  "description": "Este proyecto web consiste en un componente interactivo que permite generar e imprimir documentos en formatos comunes como tickets, facturas, órdenes de compra, entre otros.",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -36,11 +51,6 @@
     "report-tsx": "file:",
     "tsup": "^8.3.0",
     "zustand": "^5.0.0-rc.2"
-  },
-  "author": {
-    "email": "foliacosoft18@gmail.com",
-    "name": "Miguel Angel Foliaco Gomez",
-    "url": "https://foliacos.tech"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

@@ -3,7 +3,7 @@
 ![report-tsx](https://cogynngpmmcgfxiimtnc.supabase.co/storage/v1/object/public/images/portafolio/report-tsx.png?t=2024-10-21T14%3A20%3A25.634Z)
 
 
-Este proyecto web consiste en un componente interactivo que permite generar e imprimir documentos en formatos comunes como tickets, facturas, órdenes de compra, entre otros. La funcionalidad clave es un botón que, al ser clicado, envía el contenido del componente visualizado a la impresora del usuario, optimizado para garantizar que el formato del documento sea adecuado para la impresión, sin perder detalles esenciales.
+Este proyecto web consiste en un componente interactivo que permite generar e imprimir documentos en formatos comunes como tickets, facturas, órdenes de compra, entre otros. La funcionalidad clave es un botón que, al ser presionado, envía el contenido del componente visualizado a la impresora del usuario, optimizado para garantizar que el formato del documento sea adecuado para la impresión, sin perder detalles esenciales.
 
 
 El componente soporta múltiples tipos de documentos, ajustándose dinámicamente para cada formato, lo que lo hace ideal para negocios que manejan diferentes tipos de reportes y documentos administrativos. El sistema está diseñado para ser altamente personalizable, permitiendo configurar detalles como logos, información de la empresa y el formato del documento.
@@ -16,168 +16,129 @@ Principales características:
   * Compatible con impresoras estándar.
   * Esta descripción puede adaptarse según los detalles más específicos del proyecto o el público objetivo.
 
+
+### Instalación
 ```batch
 npm i report-tsx
 ```
 
 
+### Ejemplos: 
+[ticket de venta](./doc/ticket_de_venta.md)
 
-#### Creando el objeto
-Creamos el objeto de que recive el componente, esta tiene una interfaz llamada `IPage`
 
-```ts
+### Componentes
+Existe varios componentes para generar todo tipo de reportes adicional puedes incluir tus propios componentes, por ahora vamos a ver como se utilizan los componente que vienen integrado.
+Estructura básica de un componente:
 
-const ticket_de_venta={
-    media: {
-            width: '400px',
-            class: 'white'
-            },
-    content: {
-        'Logo': {
-            type: 'image',
-            props: {
-                src: 'https://foliacos.tech/favicon.png',
-                height: 200,
-                width: 200,
-            }
-        },
-            'Title And Date': {
-                type: 'rich-text',
-                props: {
-                    text: `** REPORT TS**${ date } `,
-                    data: {
-                        date: new Date().toISOString()
-                    }
-                },
-                styles: {
-                    container: {
-                        textAlign: 'center'
-                    }
-                }
-            },
-            'List Product': {
-                type: 'table',
-                props: {
-                    row: [
-                        {
-                            field: 'count',
-                            headerName: 'cant',
-                        },
-                        {
-                            field: 'name',
-                            headerName: 'Producto',
-                            truncate: {
-                                len: 13,
-                                end: '...'
-                            }
-                        },
-                        {
-                            field: 'price',
-                            headerName: 'Precio'
-                        },
-                        {
-                            field: 'total',
-                            headerName: 'Total'
-                        }
-                    ],
-                    data: [
-                        {
-                            id: '039202',
-                            count: 1,
-                            name: 'Galletas Chokis',
-                            price: '$15.00',
-                            total: '$15.00'
-                        },
-                        {
-                            id: '039203',
-                            count: 5,
-                            name: 'Mermelada de fresa',
-                            price: '$80.00',
-                            total: '$400.00'
-                        },
-                        {
-                            id: '039204',
-                            count: 2,
-                            name: 'Aceite',
-                            price: '$15.00',
-                            total: '$30.00'
-                        }
-                    ]
-                }
-            },
-            'Total Cart': {
-                type: 'table',
-                props: {
-                    row: [
-                        {
-                            field: 'totalText',
-                            headerName: '',
-                        },
-                        {
-                            field: 'total',
-                            headerName: '',
-                        },
-                    ],
-                    data: [
-                        {
-                            id: '0304',
-                            totalText: 'Total',
-                            total: '$435.00'
-                        },
-                    ]
-                },
-                styles: {
-                    container: {
-                        alignSelf: 'flex-end'
-                    }
-                }
-            },
-            'Texto de agradecimiento': {
-                type: 'rich-text',
-                props: {
-                    text: '¡Gracias Por Su Compra!'
-                },
-                styles: {
-                    container: {
-                        marginTop: '10px'
-                    }
-                }
-            },
-            'Container': {
-                type: 'container',
-                props: {
-                    nodes: [
-                        'Logo',
-                        'Title And Date',
-                        'List Product',
-                        'Total Cart',
-                        'Texto de agradecimiento'
-                    ]
-                },
-                styles: {
-                    container: {
-                        width: '100%',
-                        padding: '10px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        flexDirection: 'column'
-                    }
-                }
-            }
-        }}
+```json
+{
+    "type":"component",
+    "props":{}, //props components
+    "styles":{} // styles
+}
 ```
 
+| Propiedad | Tipo                                  | Requerido |
+| --------- | ------------------------------------- | --------- |
+| type      | [MapNameComponent](#MapNameComponent) | ✅         |
+| props     | `Record<string, any>`                 | ✅         |
+| styles    | `Record<string, CSSProperties>`       | ✅         |
 
-#### Ejemplo de uso del componente
-Ahora vamos a utilizar el componente `ReportTSX` y cargar los estilos por defectos para poder mostrar el documento y luego imprimir.
 
-```tsx
 
-import { ReportTsx } from "report-tsx"
-import 'report-tsx/dist/index.esm.css' //importamos los estilos por defecto
+> Las propiedades props y styles depende de que componente se selecciones.
 
-export const App=()=>{
-    return <ReportTsx page={ticket_de_venta} />
+### MapNameComponent
+Es un `map` que contiene todos los nombres posible para los componentes que se puede utilizar en un reporte en `report-tsx`
+
+
+### Contenedor o `container`
+El componente `container` es un componente muy **importante** ya que se necesita para poder mostrar los demás componentes como textos, imágenes, tablas, etc. Ejemplo: [ticket de venta](./doc/ticket_de_venta.md)
+La propiedad `props.nodes` recibe el nombre de los componentes como hijos
+
+
+| Propiedad        | Tipo                            | Requerido |
+| ---------------- | ------------------------------- | --------- |
+| props.nodes       | `string[]`                        | ✅         |
+| props.data       | `Record<string, any>`           | ❌         |
+| styles.container | `Record<string, CSSProperties>` | ❌         |
+
+
+```json
+{
+    "type":"rich-text",
+    "props":{
+        "text":"Hello ${world}",
+        "data":{
+            "world":"planet"
+        }
+    },
+    "styles":{
+        "container":{},
+        "styles":{}
+    }
 }
 
 ```
+### Texto o `rich-text`
+
+
+| Propiedad        | Tipo                            | Requerido |
+| ---------------- | ------------------------------- | --------- |
+| props.text       | `string`                        | ✅         |
+| props.data       | `Record<string, any>`           | ❌         |
+| styles.container | `Record<string, CSSProperties>` | ❌         |
+| styles.text      | `Record<string, CSSProperties>` | ❌         |
+
+
+```json
+{
+    "type":"rich-text",
+    "props":{
+        "text":"Hello ${world}",
+        "data":{
+            "world":"planet"
+        }
+    },
+    "styles":{
+        "container":{},
+        "styles":{}
+    }
+}
+
+```
+
+### Imagen o `image`
+
+
+| Propiedad        | Tipo                            | Requerido |
+| ---------------- | ------------------------------- | --------- |
+| props.src        | `string`                        | ✅         |
+| props.alt        | `string`                        | ❌         |
+| props.width      | `string`\|`number`              | ✅         |
+| props.height     | `string`\|`number`              | ✅         |
+| props.data       | `Record<string, any>`           | ❌         |
+| styles.container | `Record<string, CSSProperties>` | ❌         |
+| styles.image     | `Record<string, CSSProperties>` | ❌         |
+
+
+```json
+{
+    "type":"rich-text",
+    "props":{
+        "text":"Hello ${world}",
+        "data":{
+            "world":"planet"
+        }
+    },
+    "styles":{
+        "container":{},
+        "styles":{}
+    }
+}
+
+```
+
+
+![buy_me_coff](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=%E2%98%95&slug=foliacos&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00)
