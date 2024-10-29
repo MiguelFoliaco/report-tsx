@@ -24,7 +24,7 @@ npm i report-tsx
 
 
 ### Ejemplos: 
-[ticket de venta](./doc/ticket_de_venta.md)
+[ticket de venta](https://github.com/MiguelFoliaco/report-tsx/blob/master/doc/ticket_de_venta.md)
 
 
 ### Componentes
@@ -54,7 +54,7 @@ Es un `map` que contiene todos los nombres posible para los componentes que se p
 
 
 ### Contenedor o `container`
-El componente `container` es un componente muy **importante** ya que se necesita para poder mostrar los demás componentes como textos, imágenes, tablas, etc. Ejemplo: [ticket de venta](./doc/ticket_de_venta.md)
+El componente `container` es un componente muy **importante** ya que se necesita para poder mostrar los demás componentes como textos, imágenes, tablas, etc. Ejemplo: [ticket de venta](https://github.com/MiguelFoliaco/report-tsx/blob/master/doc/ticket_de_venta.md)
 La propiedad `props.nodes` recibe el nombre de los componentes como hijos
 
 
@@ -141,4 +141,4 @@ La propiedad `props.nodes` recibe el nombre de los componentes como hijos
 ```
 
 
-![buy_me_coff](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=%E2%98%95&slug=foliacos&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00)
+[![buy_me_coff](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=%E2%98%95&slug=foliacos&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00)](https://www.buymeacoffee.com/foliacos)
