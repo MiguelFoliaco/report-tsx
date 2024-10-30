@@ -6,9 +6,17 @@ import babel from '@rollup/plugin-babel';
 import typescript from 'rollup-plugin-typescript2';
 import postcss from 'rollup-plugin-postcss';
 
+
+/**
+ * @type {import('rollup').RollupOptions}
+ */
 export default {
     input: 'src/index.ts', // Archivo de entrada
     output: [
+        {
+            dir: 'dist',
+            format: 'esm',
+        },
         {
             file: 'dist/index.cjs.js',
             format: 'cjs',
